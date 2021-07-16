@@ -208,17 +208,17 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-
-
+// artists[0].name = 'the artist at index 0 is Amedeo Modigliani';
+// artists[2].name = 'the artist at index 2 is Diego Rivera';
 //(2) Bio of the third artist (2nd index) in the array 
 
-
-
+console.log('task1a', artists[0].name);
+console.log('task2b', artists[2].bio);
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
-
+artists[8].name = "Vincent Van Gogh";
+console.log(artists[8]);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -228,11 +228,12 @@ Use getArtistByIndex to do the following:
 
 Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
+function getArtistByIndex(array,index) {
   /*Your Code Here*/
+  return   `the artist at index ${array[index].id} is ${array[index].name}`;
 }
 
-
+console.log('task3', getArtistByIndex(artists,0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -243,11 +244,28 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-function get20s(/*Your Code Here*/) {
+function get20s(array) {
   /*Your Code Here*/
+  
+// for(let i=0; i < artists.length; i++){
+//   const year = artists[i]['year'].split(' - ');
+//  if (year
+//   console.log0
+// //   if(artists[i]['year']  )
+// }
+const output = [];
+for (var i = 0; i < artists.length; i++) {
+    const years = artists[i]['years'].split(" - ");
+    const bornIn20 = years[0].startsWith("19") || years[0] == "2000";
+    const diedIn20 = years[1].startsWith("19") || years[1] == "2000";
+    if (bornIn20 && diedIn20) {
+        output.push(artists[i]['name']);
+    }
 }
-
-
+return output;
+}
+//  console.log(year[0]);
+console.log('task4', get20s(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
@@ -258,10 +276,11 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/) {
+function removeArtist(array,index) {
   /*Your Code Here*/
+a
 }
-
+console.log()
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
